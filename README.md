@@ -1,146 +1,113 @@
-Typing Tester
+# Typing Tester
 
-March 2026
-Author: Charles (Chip) Brady
+A Python desktop application that measures a user's typing speed and accuracy using randomly selected pangrams. The application provides multiple difficulty levels, calculates Words Per Minute (WPM), and applies a time penalty for typing mistakes to encourage both speed and accuracy.
 
-📌 Overview
+---
 
-Typing Tester is a graphical Python application that measures a user’s typing speed in Words Per Minute (WPM) while also accounting for typing accuracy.
+## Features
 
-The program displays a randomly selected pangram (a sentence containing every letter of the alphabet), times how long the user takes to type it, and applies time penalties for mistakes.
+* Randomly selects a pangram for each typing test.
+* Three difficulty levels:
 
-This project was built using:
+  * **Easy** – Displays the sentence normally.
+  * **Medium** – Randomly capitalizes approximately 50% of the letters.
+  * **Hard** – Randomly capitalizes approximately 75% of the letters.
+* Three-second countdown before the test begins.
+* Live timer that tracks elapsed time.
+* Calculates typing speed in **Words Per Minute (WPM)**.
+* Counts typing errors by comparing the user's input to the displayed sentence.
+* Applies a **5-second penalty** for every typing error.
+* Displays the total number of errors and adjusted WPM after the test is complete.
 
-tkinter for the graphical user interface
+---
 
-pynput for keyboard event detection
+## Technologies Used
 
-random and time for countdown and sentence variation
+* Python 3
+* Tkinter (GUI)
+* Pynput (Keyboard event detection)
+* Random module
 
-🎮 Features
+---
 
-✅ Three difficulty levels: Easy, Medium, Hard
+## How It Works
 
-✅ Random sentence selection
+1. Launch the application.
+2. Select a difficulty level.
+3. Click **Start**.
+4. A three-second countdown begins.
+5. A random pangram is displayed.
+6. Type the sentence exactly as shown.
+7. Press **Enter** when finished.
+8. The application:
 
-✅ Countdown before test begins
+   * Stops the timer
+   * Counts typing errors
+   * Applies time penalties
+   * Calculates Words Per Minute
+   * Displays the final results
 
-✅ Live timer
+---
 
-✅ Error detection (character-by-character comparison)
+## Words Per Minute Formula
 
-✅ 5-second penalty per mistake
+The application calculates typing speed using the following formula:
 
-✅ Words Per Minute (WPM) calculation
+```
+WPM = (Number of Words ÷ Total Time in Seconds) × 60
+```
 
-✅ Ability to restart the test
+The total time includes an additional **5-second penalty** for each typing error.
 
-🧠 How It Works
+---
 
-The user selects a difficulty level:
+## Project Structure
 
-Easy – Sentence appears normally.
+```
+TypingTester/
+│
+├── main.py             # Main application and GUI
+├── TypingTester.py     # Class used to store game state
+└── README.md
+```
 
-Medium – ~50% of letters randomly capitalized.
+---
 
-Hard – ~75% of letters randomly capitalized.
+## Future Improvements
 
-The user clicks Start.
+Possible enhancements include:
 
-A short countdown appears.
+* Replace the `pynput` dependency with native Tkinter keyboard bindings.
+* Convert the application into a fully object-oriented design by moving the GUI into the `TypingTester` class.
+* Display typing accuracy as a percentage.
+* Highlight incorrect characters as the user types.
+* Add additional typing passages loaded from a text file.
+* Store high scores locally.
+* Add themes (Light/Dark Mode).
+* Display average WPM across multiple tests.
+* Include a restart button and session statistics.
 
-A random pangram is displayed.
+---
 
-The timer begins.
+## Skills Demonstrated
 
-The user types the sentence and presses Enter to stop.
+This project demonstrates experience with:
 
-The program:
+* Python programming
+* Object-oriented programming concepts
+* Tkinter GUI development
+* Event-driven programming
+* String manipulation
+* Algorithms for error detection
+* Timer implementation using Tkinter's `after()` method
+* User input validation
+* Program state management
+* Clean function decomposition and documentation
 
-Compares typed input to the original sentence
+---
 
-Counts character differences
+## Author
 
-Adds 5 seconds per error
+**Charles (Chip) Brady**
 
-Calculates Words Per Minute
-
-🧮 WPM Formula
-WPM = (Total Words ÷ Total Seconds) × 60
-
-Errors increase total time, reducing the final WPM score.
-
-📦 Requirements
-
-Python 3.x
-
-tkinter (usually included with Python)
-
-pynput
-
-To install pynput, run:
-
-pip install pynput
-▶️ How to Run
-
-Make sure Python 3 is installed.
-
-Install dependencies if needed.
-
-Save the file as:
-
-typing_tester.py
-
-Run the program:
-
-python typing_tester.py
-🖥 Interface Overview
-
-Difficulty selection (Radio buttons)
-
-Explanation text
-
-Start button
-
-Countdown display
-
-Pangram display
-
-Timer
-
-Input text field
-
-Results display
-
-⚠️ Notes
-
-Press Enter to stop the timer.
-
-The Start button is disabled during a test.
-
-Input is disabled after the test ends until restarted.
-
-Each typing mistake adds 5 seconds to your total time.
-
-🚀 Future Improvement Ideas
-
-Display accuracy percentage
-
-Add more pangrams
-
-Track highest score
-
-Add sound effects for countdown
-
-Replace time.sleep() with non-blocking countdown logic
-
-Add a graphical progress bar
-
-📄 License
-
-This project is for educational purposes.
-
-👤 Author
-
-Charles (Chip) Brady
-March 2026
+July 2026
